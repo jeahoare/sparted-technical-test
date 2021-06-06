@@ -1,0 +1,21 @@
+.selected-picture-container {
+    z-index: 3;
+    top: 0;
+    position: fixed;
+
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(41 41 38 / 94%);
+
+    cursor: pointer;
+}
+
+.selected-picture {
+    max-width: 95vw;
+    max-height: 95vh;
+}
