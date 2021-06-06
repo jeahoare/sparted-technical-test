@@ -3421,7 +3421,7 @@ const PicturesApi = {
     loadList: function() {
         m.request({
             method: "GET",
-            url: "https://picsum.photos/v2/list?page=" + Math.floor(Math.random() * 11),
+            url: "https://picsum.photos/v2/list?page=" + Math.floor(Math.random() * 11) + "&limit=30",
         })
         .then(function(result) {
             PicturesApi.list = [...PicturesApi.list, ...mixPictures(result)];
