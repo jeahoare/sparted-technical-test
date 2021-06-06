@@ -3,17 +3,14 @@ const m = require("mithril");
 require("./style.css");
 
 const Loader = require("../loader");
+const { manageEventListenerOnPicture } = require("../../utils/event-listener-manager");
 
 function Picture() {
     return {
         mounted: false,
         oncreate: function(vnode) {
             const element = document.getElementById(vnode.attrs.index);
-
-            element.addEventListener("load", event => {
-                vnode.state.mounted = true;
-                m.redraw();
-            });
+            element.addEventListener("load", () => manageEventListenerOnPicture(element, vnode));
         },
         view: function (vnode) {
             return m("div", { class: "div-img" }, [

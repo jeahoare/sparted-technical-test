@@ -4,11 +4,10 @@ require("./style.css");
 
 const Picture = require("../picture");
 const PicturesApi = require("../../api-services/pictures-list");
+const { manageEventOnInifitePage } = require("../../utils/event-listener-manager");
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
-        PicturesApi.loadList();
-    }
+    manageEventOnInifitePage(PicturesApi);
 });
 
 const PicturesList = {

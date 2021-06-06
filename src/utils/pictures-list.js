@@ -1,5 +1,3 @@
-const m = require("mithril");
-
 function mixPictures(picsList) {
     const len = picsList.length;
     let mixedPics = [...picsList];
